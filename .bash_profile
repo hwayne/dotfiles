@@ -1,22 +1,26 @@
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+eval "$(hub alias -s)"
+source ~/warp/warp
 
 alias master="git checkout master"
 alias gpull="git pull"
 alias gpush="git push -u origin"
 alias gb="git branch"
+alias gd="git diff"
 alias gm="git merge master"
 alias gc="git checkout"
 alias commit="git commit -am "
-source ~/warp/warp
 
 alias h="history | grep"
 alias g="grep -iR"
 alias vi="echo NO"
 alias sourceme="source ~/.bash_profile"
 export GOPATH=/usr/local/Cellar/go/1.3/bin
-export PATH=$PATH:$GOPATH/bin
 export CLICOLOR=1
+
+export PATH="$HOME/.local/utils/arcanist/bin:$PATH"
+export PATH=$PATH:$GOPATH/bin
 
 alias writing="cd ~/Dropbox/backup/documents/writing"
 alias pivot="cd ~/.vim/bundle/vim-pivot/plugin"
