@@ -3,6 +3,7 @@
 eval "$(hub alias -s)"
 source ~/warp/warp
 
+export CORE=~/espark/core
 alias master="git checkout master"
 alias gpull="git pull"
 alias gpush="git push -u origin"
@@ -15,6 +16,7 @@ alias commit="git commit -am "
 alias h="history | grep"
 alias g="grep -iR"
 alias vi="echo NO"
+alias vim="mvim -v"
 alias sourceme="source ~/.bash_profile"
 export GOPATH=/usr/local/Cellar/go/1.3/bin
 export CLICOLOR=1
