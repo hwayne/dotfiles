@@ -86,7 +86,7 @@
      " In your .vimrc.bundles.local file
      " list only the plugin groups you will use
      if !exists('g:spf13_bundle_groups')
-         let g:spf13_bundle_groups=['added', 'general', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'go', 'twig', 'javascript', 'fs', 'haskell', 'html', 'misc', 'scala']
+         let g:spf13_bundle_groups=['added', 'general', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'go', 'twig', 'javascript', 'fs', 'html', 'misc', 'scala']
      endif
  
      " To override all the included bundles, put
@@ -97,13 +97,13 @@
          if count(g:spf13_bundle_groups, 'added')
              Bundle 'tpope/vim-repeat' 
              Bundle 'hwayne/vim-pivot'
-             Bundle 'vim-scripts/argtextobj.vim'
+"             Bundle 'vim-scripts/argtextobj.vim'
              Bundle 'AndrewRadev/switch.vim'
              Bundle 'kshenoy/vim-signature'
              Bundle 'chrisbra/csv.vim'
              Bundle 'wesQ3/vim-windowswap'
              Bundle 'chrisbra/unicode.vim'
-             Bundle 'solarnz/thrift.vim'
+             Bundle 'mtth/scratch.vim'
          endif
      " General
          if count(g:spf13_bundle_groups, 'general')
@@ -123,7 +123,7 @@
              Bundle 'flazz/vim-colorschemes'
              Bundle 'mbbill/undotree'
              Bundle 'myusuf3/numbers.vim'
-"             Bundle 'nathanaelkane/vim-indent-guides'
+             Bundle 'nathanaelkane/vim-indent-guides'
 "             if !exists('g:spf13_no_views')
 "                 Bundle 'vim-scripts/restore_view.vim'
 "             endif
@@ -135,7 +135,7 @@
 "     " General Programming
          if count(g:spf13_bundle_groups, 'programming')
 "             " Pick one of the checksyntax, jslint, or syntastic
-"             Bundle 'scrooloose/syntastic'
+             Bundle 'scrooloose/syntastic'
 "             Bundle 'tpope/vim-fugitive'
 "             Bundle 'mattn/webapi-vim'
 "             Bundle 'mattn/gist-vim'
@@ -182,10 +182,12 @@
          if count(g:spf13_bundle_groups, 'javascript')
              Bundle 'elzr/vim-json'
              Bundle 'groenewege/vim-less'
+             Bundle 'claco/jasmine.vim'
+             Bundle 'burnettk/vim-angular'
 "             Bundle 'pangloss/vim-javascript'
 "             Bundle 'briancollins/vim-jst'
              Bundle 'kchmck/vim-coffee-script'
-             Bundle 'lukaszkorecki/CoffeeTags'
+"             Bundle 'lukaszkorecki/CoffeeTags'
          endif
 
 "     " Java

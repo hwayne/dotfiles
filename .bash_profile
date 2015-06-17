@@ -31,3 +31,4 @@ alias django="python manage.py"
 alias groku="git push heroku master"
 export NOTEPAD=~/Dropbox/backup/documents/notepad
 export MY_NAME=Hillel
+export PATH="$HOME/.local/utils/arcanist/bin:$PATH"

@@ -19,7 +19,7 @@
         " The next three lines ensure that the ~/.vim/bundle/ system works
         filetype on
         filetype off
-        set rtp+=~/.vim/bundle/Vundle.vim
+        set rtp+=~/.vim/bundle/vundle
         call vundle#rc()
     " }
 
@@ -139,6 +139,7 @@ endif
         set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
         set showcmd                 " Show partial commands in status line and
                                     " Selected characters/lines in visual mode
+        Bundle 'bling/vim-airline'
     endif
 
     set backspace=indent,eol,start  " Backspace for dummies
@@ -200,10 +201,14 @@ noremap Y y$
 vnoremap <c-c> :w !pbcopy<cr><cr>
 noremap <leader>cp :set paste<cr>i<c-R>*<esc>:set nopaste<cr>
 
+"Git searching
+
+nnoremap <leader>/ :!git grep <c-r>=expand('<cword>')<CR><CR>
+
 "splitscreen maps
 
-noremap qw <c-w>
-noremap <c-w> <NOP>
+noremap qw <NOP>
+"noremap <c-w> <NOP>
 
 "misc Maps
 
@@ -218,16 +223,19 @@ noremap ZC :qa!<cr>
 "Navigation
 
 nnoremap K i<cr><esc>
-noremap j gj
-"noremap jj j
-noremap k gk
-"noremap kk k
-noremap gj j
-noremap gk k
+"noremap j gj
+"noremap k gk
+"noremap gj j
+"noremap gk k
+noremap ^ H
+noremap $ L
 noremap H ^
-"noremap hh h
-"noremap ll l
 noremap L $
+
+noremap jj <nop>
+noremap kk <nop>
+noremap hh <nop>
+noremap ll <nop>
 
 "free line adding
 
@@ -256,3 +264,4 @@ noremap <leader>t :!python manage.py test<cr>
 iab Monocole Monocle
 iab monocole monocle
 iab cons console.log
+
