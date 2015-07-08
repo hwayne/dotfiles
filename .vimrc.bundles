@@ -86,7 +86,7 @@
      " In your .vimrc.bundles.local file
      " list only the plugin groups you will use
      if !exists('g:spf13_bundle_groups')
-         let g:spf13_bundle_groups=['added', 'general', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'go', 'twig', 'javascript', 'fs', 'html', 'misc', 'scala']
+         let g:spf13_bundle_groups=['added', 'general', 'neocomplete', 'programming', 'php', 'ruby', 'python', 'go', 'twig', 'javascript', 'fs', 'html', 'misc', 'scala']
      endif
  
      " To override all the included bundles, put
@@ -146,23 +146,25 @@
              endif
          endif
 
-"     " Snippets & AutoComplete
-"         if count(g:spf13_bundle_groups, 'snipmate')
-"             " Bundle 'garbas/vim-snipmate'
-"             " Bundle 'honza/vim-snippets'
-"             " Source support_function.vim to support vim-snippets.
-"             if filereadable(expand("~/.vim/bundle/vim-snippets/snippets/support_functions.vim"))
-"                 source ~/.vim/bundle/vim-snippets/snippets/support_functions.vim
-"             endif
-"         elseif count(g:spf13_bundle_groups, 'neocomplcache')
-"             " Bundle 'Shougo/neocomplcache'
-"             " Bundle 'Shougo/neosnippet'
-"             " Bundle 'honza/vim-snippets'
-"         elseif count(g:spf13_bundle_groups, 'neocomplete')
-"             " Bundle 'Shougo/neocomplete.vim.git'
-"             " Bundle 'Shougo/neosnippet'
-"             " Bundle 'honza/vim-snippets'
-"         endif
+     " Snippets & AutoComplete
+         if count(g:spf13_bundle_groups, 'snipmate')
+              Bundle 'SirVer/ultisnips'
+              Bundle 'honza/vim-snippets'
+             " Source support_function.vim to support vim-snippets.
+             if filereadable(expand("~/.vim/bundle/vim-snippets/snippets/support_functions.vim"))
+                 source ~/.vim/bundle/vim-snippets/snippets/support_functions.vim
+             endif
+         elseif count(g:spf13_bundle_groups, 'neocomplcache')
+               Bundle 'SirVer/ultisnips'
+             " Bundle 'Shougo/neocomplcache'
+             " Bundle 'Shougo/neosnippet'
+             " Bundle 'honza/vim-snippets'
+         elseif count(g:spf13_bundle_groups, 'neocomplete')
+              Bundle 'SirVer/ultisnips'
+              Bundle 'Shougo/neocomplete.vim.git'
+              Bundle 'Shougo/neosnippet'
+              Bundle 'honza/vim-snippets'
+         endif
 
 "     " PHP
 "         if count(g:spf13_bundle_groups, 'php')

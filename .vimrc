@@ -173,6 +173,7 @@ set pastetoggle=<F10>
 
 "Plugin quickstarts
 "autocmd vimenter * NERDTree
+nmap S :Scratch<CR>
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>u :UndotreeToggle<CR>
@@ -187,6 +188,7 @@ nmap [h <Plug>GitGutterPrevHunk
 
 let NERDTreeIgnore = ['\~$', '\.pyc']
 let g:pymode_lint_on_write = 0
+let g:UltiSnipsListSnippets = '``'
 set completeopt-=preview
 
 
@@ -265,3 +267,4 @@ iab Monocole Monocle
 iab monocole monocle
 iab cons console.log
 
+noremap \l :let @+ = expand('%')<cr>

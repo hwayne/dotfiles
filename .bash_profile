@@ -4,6 +4,7 @@ eval "$(hub alias -s)"
 source ~/warp/warp
 
 export CORE=~/espark/core
+export EDITOR=vim
 alias master="git checkout master"
 alias gpull="git pull"
 alias gpush="git push -u origin"
@@ -32,3 +33,9 @@ alias groku="git push heroku master"
 export NOTEPAD=~/Dropbox/backup/documents/notepad
 export MY_NAME=Hillel
 export PATH="$HOME/.local/utils/arcanist/bin:$PATH"
+
+export HISTSIZE=5000
+export HISTFILESIZE=10000
+export HISTCONTROL=erasedups:ignorespace
+shopt -s histappend
+
