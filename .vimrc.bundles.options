@@ -1,0 +1,41 @@
+" vim:fdm=marker
+
+" NERDTree {{{
+
+let NERDTreeIgnore = ['\~$', '\.pyc']
+nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+
+" }}}
+" Ctrl-P {{{
+
+let g:ctrlp_working_path_mode = 'r'
+nnoremap <leader><c-p> :CtrlPBuffer<CR>
+
+" }}}
+" UltiSnips {{{
+
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+" }}}
+" misc {{{
+
+nmap S :Scratch<CR>
+nmap <leader>u :UndotreeToggle<CR>
+noremap - :Switch<CR>
+
+nmap <F8> :TagbarToggle<CR>
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+
+"fugitive
+nnoremap <leader>/ :Ggrep <c-r>=expand('<cword>')<CR><CR>
+
+let g:pymode_lint_on_write = 0
+
+" vim-rails
+noremap <leader>r <c-W>v<c-W>l:A<cr>
+
+" }}}

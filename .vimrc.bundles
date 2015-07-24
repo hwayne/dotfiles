@@ -136,7 +136,7 @@
          if count(g:spf13_bundle_groups, 'programming')
 "             " Pick one of the checksyntax, jslint, or syntastic
              Bundle 'scrooloose/syntastic'
-"             Bundle 'tpope/vim-fugitive'
+             Bundle 'tpope/vim-fugitive'
 "             Bundle 'mattn/webapi-vim'
 "             Bundle 'mattn/gist-vim'
              Bundle 'scrooloose/nerdcommenter'
@@ -164,6 +164,7 @@
               Bundle 'Shougo/neocomplete.vim.git'
               Bundle 'Shougo/neosnippet'
               Bundle 'honza/vim-snippets'
+              "Bundle 'Valloric/YouCompleteMe'
          endif
 
 "     " PHP
@@ -171,9 +172,9 @@
 "         endif
 
      " Python
-         if count(g:spf13_bundle_groups, 'python')
+         if count(g:spf13_bundle_groups, 'pythons')
 "             " Pick either python-mode or pyflakes & pydoc
-              Bundle 'klen/python-mode'
+              " Bundle 'klen/python-mode'
               Bundle 'python.vim'
               Bundle 'python_match.vim'
               Bundle 'ameade/qtpy-vim'
@@ -186,10 +187,10 @@
              Bundle 'groenewege/vim-less'
              Bundle 'claco/jasmine.vim'
              Bundle 'burnettk/vim-angular'
-"             Bundle 'pangloss/vim-javascript'
+             Bundle 'pangloss/vim-javascript'
 "             Bundle 'briancollins/vim-jst'
              Bundle 'kchmck/vim-coffee-script'
-"             Bundle 'lukaszkorecki/CoffeeTags'
+             Bundle 'lukaszkorecki/CoffeeTags'
          endif
 
 "     " Java
@@ -210,6 +211,7 @@
 
 "     " Ruby
          if count(g:spf13_bundle_groups, 'ruby')
+             Bundle 'thoughtbot/vim-rspec'
              Bundle 'tpope/vim-rails'
              Bundle 'nono/vim-handlebars'
 "             Bundle 'juvenn/mustache.vim'

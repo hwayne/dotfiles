@@ -2,17 +2,16 @@
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 eval "$(hub alias -s)"
 source ~/warp/warp
+source ~/git-completion.bash
 
+
+export IOS=~/espark/ios-app/eSpark.xcworkspace/
 export CORE=~/espark/core
 export EDITOR=vim
 alias master="git checkout master"
-alias gpull="git pull"
-alias gpush="git push -u origin"
 alias gb="git branch"
 alias gd="git diff"
 alias gm="git merge master"
-alias gc="git checkout"
-alias commit="git commit -am "
 
 alias h="history | grep"
 alias g="grep -iR"

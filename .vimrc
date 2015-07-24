@@ -53,7 +53,19 @@ if filereadable(expand("~/.vimrc.functions"))
 endif
 " }
 
+" Use plugin configs {
+if filereadable(expand("~/.vimrc.bundles.options"))
+  source ~/.vimrc.bundles.options
+endif
+" }
 
+
+" Use all of my crazy mappings {
+if filereadable(expand("~/.vimrc.mappings"))
+  source ~/.vimrc.mappings
+endif
+" }
+"
 " General {
 
     set background=dark         " Assume a dark background
@@ -171,100 +183,8 @@ au Syntax   * RainbowParenthesesLoadBraces
 let mapleader="\<Space>"
 set pastetoggle=<F10>
 
-"Plugin quickstarts
-"autocmd vimenter * NERDTree
-nmap S :Scratch<CR>
-nmap <leader>n :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
-nmap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :w<cr>:source $MYVIMRC<cr>
-nnoremap <c-o><c-p> :CtrlPBufTag<CR>
-noremap - :Switch<CR>
-noremap <leader>r <c-W>v<c-W>l:A<cr>
-nmap <F8> :TagbarToggle<CR>
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
 
-let NERDTreeIgnore = ['\~$', '\.pyc']
-let g:pymode_lint_on_write = 0
-let g:UltiSnipsListSnippets = '``'
 set completeopt-=preview
 
-
-:inoremap jk <Esc>
-:inoremap JK <Esc>
-
-"Better copy/paste
-
-noremap <leader>ds :%s/\s*$//<cr>:noh<cr>
-
-noremap Y y$
-vnoremap <c-c> :w !pbcopy<cr><cr>
-noremap <leader>cp :set paste<cr>i<c-R>*<esc>:set nopaste<cr>
-
-"Git searching
-
-nnoremap <leader>/ :!git grep <c-r>=expand('<cword>')<CR><CR>
-
-"splitscreen maps
-
-noremap qw <NOP>
-"noremap <c-w> <NOP>
-
-"misc Maps
-
-"noremap ; :
-noremap \\ :wa<return>
-noremap Q @@
-
-"exiting
-noremap ZA :wa<cr>:qa<cr>
-noremap ZC :qa!<cr>
-
-"Navigation
-
-nnoremap K i<cr><esc>
-"noremap j gj
-"noremap k gk
-"noremap gj j
-"noremap gk k
-noremap ^ H
-noremap $ L
-noremap H ^
-noremap L $
-
-noremap jj <nop>
-noremap kk <nop>
-noremap hh <nop>
-noremap ll <nop>
-
-"free line adding
-
-noremap go o<esc>
-noremap gO O<esc>
-
-"remote move/copy line
-
-noremap <leader>dk :<C-U>execute "normal! ".v:count."kdd".v:count."jkPj"<CR>
-noremap <leader>k :<C-U>execute "normal! ".v:count."kyy".v:count."jPj"<CR>
-noremap <leader>dj :<C-U>execute "normal! ".v:count."jdd".v:count."kjP"<CR>
-noremap <leader>j :<C-U>execute "normal! ".v:count."jyy".v:count."kp"<CR>
-
-"SWANK MACROS
-"Highlight words without moving cursor
-noremap <leader><leader>h *#
-noremap <leader><leader>s ^yyp^cwexpectf,c3l.f'xA.toHaveBeenCalled()
-
-"Fast testing
-noremap <leader>t :!python manage.py test<cr>
-
-"Hf'lvi'"bpF.x
-"goqwkHf'"aya'f}F."byt"Hf'lvi'"bpF.xgjHqwji"b":jkF.xA a,jk==@q
-"ayiwdd/aLN~F(dFEiHandlebars.templates.jk"apbf'df 
-"Spelling errors constant
-iab Monocole Monocle
-iab monocole monocle
-iab cons console.log
-
-noremap \l :let @+ = expand('%')<cr>
