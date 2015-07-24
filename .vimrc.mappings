@@ -3,7 +3,7 @@
 " exiting insert mode {{{
 
 :inoremap jk <esc>
-:inoremap jk <esc>
+:inoremap JK <esc>
 
 " }}}
 " filesystems {{{
@@ -12,20 +12,20 @@
 noremap \l :let @+ = expand('%')<cr>
 
 noremap \\ :wa<return>
-noremap za :wa<cr>:qa<cr>
-noremap zc :qa!<cr>
+noremap ZA :wa<cr>:qa<cr>
+noremap ZC :qa!<cr>
 
 " }}}
 " navigation {{{
 
 "make k act like inverse j
-nnoremap k i<cr><esc>
+nnoremap K i<cr><esc>
 
 "make capital h/l like super h/l
-noremap ^ h
-noremap $ l
-noremap h ^
-noremap l $
+noremap ^ H
+noremap $ L
+noremap H ^
+noremap L $
 
 "easier navigation of windows
 nnoremap <c-j> <c-w>j
@@ -58,7 +58,7 @@ noremap <leader>j :<C-U>execute "normal! ".v:count."jyy".v:count."kp"<CR>
 " macro trix {{{
 
 "easier macro repeating and avoid ex mode
-noremap q @@
+noremap Q @@
 
 "highlight words without moving cursor
 noremap <leader><leader>h *#
