@@ -7,12 +7,10 @@ source ~/git-completion.bash
 
 export IOS=~/espark/ios-app/eSpark.xcworkspace/
 export CORE=~/espark/core
+alias core="cd $CORE"
 export EDITOR=vim
-alias master="git checkout master"
-alias gb="git branch"
-alias gd="git diff"
-alias gm="git merge master"
 
+alias zr="zeus rspec"
 alias h="history | grep"
 alias g="grep -iR"
 alias vi="echo NO"

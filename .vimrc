@@ -53,18 +53,8 @@ if filereadable(expand("~/.vimrc.functions"))
 endif
 " }
 
-" Use plugin configs {
-if filereadable(expand("~/.vimrc.bundles.options"))
-  source ~/.vimrc.bundles.options
-endif
-" }
 
 
-" Use all of my crazy mappings {
-if filereadable(expand("~/.vimrc.mappings"))
-  source ~/.vimrc.mappings
-endif
-" }
 "
 " General {
 
@@ -187,4 +177,15 @@ nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :w<cr>:source $MYVIMRC<cr>
 
 set completeopt-=preview
+"
+" Use plugin configs {
+if filereadable(expand("~/.vimrc.bundles.options"))
+  source ~/.vimrc.bundles.options
+endif
+" }
+" Use all of my crazy mappings {
+if filereadable(expand("~/.vimrc.mappings"))
+  source ~/.vimrc.mappings
+endif
+" }
 

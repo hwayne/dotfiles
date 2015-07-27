@@ -108,6 +108,7 @@
      " General
          if count(g:spf13_bundle_groups, 'general')
              Bundle 'Xuyuanp/nerdtree'
+             Bundle 'kana/vim-textobj-user'
              Bundle 'altercation/vim-colors-solarized'
              Bundle 'spf13/vim-colors'
              Bundle 'tpope/vim-surround'
@@ -214,6 +215,7 @@
              Bundle 'thoughtbot/vim-rspec'
              Bundle 'tpope/vim-rails'
              Bundle 'nono/vim-handlebars'
+             Bundle 'nelstrom/vim-textobj-rubyblock'
 "             Bundle 'juvenn/mustache.vim'
              let g:rubycomplete_buffer_loading = 1
              let g:rubycomplete_classes_in_global = 1
