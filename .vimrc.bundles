@@ -112,7 +112,7 @@
              Bundle 'altercation/vim-colors-solarized'
              Bundle 'spf13/vim-colors'
              Bundle 'tpope/vim-surround'
-             Bundle 'kien/ctrlp.vim'
+             Bundle 'ctrlpvim/ctrlp.vim'
 "             " Bundle 'terryma/vim-multiple-cursors'
 "             Bundle 'vim-scripts/sessionman.vim'
              Bundle 'matchit.zip'

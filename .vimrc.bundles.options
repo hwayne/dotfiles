@@ -25,7 +25,7 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 nmap S :Scratch<CR>
 nmap <leader>u :UndotreeToggle<CR>
 noremap - :Switch<CR>
-
+let g:switch_custom_definitions = [["create", "build" ]]
 nmap <F8> :TagbarToggle<CR>
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk

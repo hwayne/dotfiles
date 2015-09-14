@@ -10,6 +10,7 @@
 
 " save file path for c/p
 noremap \l :let @+ = expand('%')<cr>
+nnoremap <leader>/ :!git grep <c-r>=expand('<cword>')<CR><CR>
 
 noremap \\ :wa<return>
 noremap ZA :wa<cr>:qa<cr>
@@ -34,10 +35,10 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 "train to use hjkl less
-noremap jj <nop>
-noremap kk <nop>
-noremap hh <nop>
-noremap ll <nop>
+"noremap jj <nop>
+"noremap kk <nop>
+"noremap hh <nop>
+"noremap ll <nop>
 
 " }}}
 " line manipulation {{{
@@ -65,10 +66,18 @@ noremap <leader><leader>h *#
 "noremap <leader><leader>s ^yyp^cwexpectf,c3l.f'xa.tohavebeencalled()
 
 " }}}
+" safe deletion {{{
+
+noremap s "_d
+noremap S "_D
+noremap ss "_dd
+
+" }}}
 " misc {{{
 
 noremap <leader>ds :%s/\s*$//<cr>:noh<cr>
-
+"search and replace word under cursor
+nnoremap <Leader>sr :%s/\<<C-r><C-w>\>/
 noremap Y y$
 
 " }}}
