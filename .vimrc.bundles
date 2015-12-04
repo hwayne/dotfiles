@@ -104,6 +104,7 @@
              Bundle 'wesQ3/vim-windowswap'
              Bundle 'chrisbra/unicode.vim'
              Bundle 'mtth/scratch.vim'
+             Bundle 'Peeja/vim-cdo'
          endif
      " General
          if count(g:spf13_bundle_groups, 'general')
@@ -114,7 +115,8 @@
              Bundle 'tpope/vim-surround'
              Bundle 'ctrlpvim/ctrlp.vim'
 "             " Bundle 'terryma/vim-multiple-cursors'
-"             Bundle 'vim-scripts/sessionman.vim'
+             Bundle 'xolox/vim-misc'
+             Bundle 'xolox/vim-session'
              Bundle 'matchit.zip'
              Bundle 'kien/rainbow_parentheses.vim'
 
@@ -128,7 +130,6 @@
 "             if !exists('g:spf13_no_views')
 "                 Bundle 'vim-scripts/restore_view.vim'
 "             endif
-             Bundle 'airblade/vim-gitgutter'
 "             Bundle 'tpope/vim-abolish.git'
 
          endif
@@ -136,37 +137,41 @@
 "     " General Programming
          if count(g:spf13_bundle_groups, 'programming')
 "             " Pick one of the checksyntax, jslint, or syntastic
+             Bundle 'mattn/webapi-vim'
+"             Bundle 'mattn/gist-vim'
+"             Bundle 'godlygeek/tabular'
+             Bundle 'airblade/vim-gitgutter'
              Bundle 'scrooloose/syntastic'
              Bundle 'tpope/vim-fugitive'
-"             Bundle 'mattn/webapi-vim'
-"             Bundle 'mattn/gist-vim'
+             Bundle 'mmozuras/vim-github-comment'
+             Bundle 'junkblocker/patchreview-vim'
+             Bundle 'codegram/vim-codereview'
              Bundle 'scrooloose/nerdcommenter'
-"             Bundle 'godlygeek/tabular'
              if executable('ctags')
                  Bundle 'majutsushi/tagbar'
              endif
          endif
 
      " Snippets & AutoComplete
-         if count(g:spf13_bundle_groups, 'snipmate')
-              Bundle 'SirVer/ultisnips'
-              Bundle 'honza/vim-snippets'
-             " Source support_function.vim to support vim-snippets.
-             if filereadable(expand("~/.vim/bundle/vim-snippets/snippets/support_functions.vim"))
-                 source ~/.vim/bundle/vim-snippets/snippets/support_functions.vim
-             endif
-         elseif count(g:spf13_bundle_groups, 'neocomplcache')
-               Bundle 'SirVer/ultisnips'
-             " Bundle 'Shougo/neocomplcache'
-             " Bundle 'Shougo/neosnippet'
-             " Bundle 'honza/vim-snippets'
-         elseif count(g:spf13_bundle_groups, 'neocomplete')
-              Bundle 'SirVer/ultisnips'
-              Bundle 'Shougo/neocomplete.vim.git'
-              Bundle 'Shougo/neosnippet'
-              Bundle 'honza/vim-snippets'
-              "Bundle 'Valloric/YouCompleteMe'
-         endif
+"         if count(g:spf13_bundle_groups, 'snipmate')
+"              Bundle 'SirVer/ultisnips'
+"              Bundle 'honza/vim-snippets'
+"             " Source support_function.vim to support vim-snippets.
+"             if filereadable(expand("~/.vim/bundle/vim-snippets/snippets/support_functions.vim"))
+"                 source ~/.vim/bundle/vim-snippets/snippets/support_functions.vim
+"             endif
+"         elseif count(g:spf13_bundle_groups, 'neocomplcache')
+"               Bundle 'SirVer/ultisnips'
+"             " Bundle 'Shougo/neocomplcache'
+"             " Bundle 'Shougo/neosnippet'
+"             " Bundle 'honza/vim-snippets'
+"         elseif count(g:spf13_bundle_groups, 'neocomplete')
+"              Bundle 'SirVer/ultisnips'
+"              Bundle 'Shougo/neocomplete.vim.git'
+"              Bundle 'Shougo/neosnippet'
+"              Bundle 'honza/vim-snippets'
+"              "Bundle 'Valloric/YouCompleteMe'
+"         endif
 
 "     " PHP
 "         if count(g:spf13_bundle_groups, 'php')

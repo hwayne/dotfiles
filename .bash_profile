@@ -1,7 +1,6 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 eval "$(hub alias -s)"
-set -o vi
 source ~/warp/warp
 source ~/git-completion.bash
 

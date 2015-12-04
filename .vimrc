@@ -168,7 +168,6 @@ au Syntax   * RainbowParenthesesLoadRound
 au Syntax   * RainbowParenthesesLoadSquare
 au Syntax   * RainbowParenthesesLoadBraces
 
-"TODO: MOVE MAPS TO OWN FILE
 "Leader
 let mapleader="\<Space>"
 set pastetoggle=<F10>
@@ -177,7 +176,11 @@ nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :w<cr>:source $MYVIMRC<cr>
 
 set completeopt-=preview
-"
+set lazyredraw
+set wildmenu
+set splitbelow
+set splitright
+
 " Use plugin configs {
 if filereadable(expand("~/.vimrc.bundles.options"))
   source ~/.vimrc.bundles.options

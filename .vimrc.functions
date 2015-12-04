@@ -1,0 +1,8 @@
+function! AddCircleCIText()
+  normal! ihttps://circleci.com/gh/eSpark/core/tree/
+  execute "normal! /branch\<cr>"
+  normal! Wyt:``$p
+endfunction
+
+com! AddCircle cal AddCircleCIText()
+" ihttps://circleci.com/gh/eSpark/core.<80>kb/tree/^[/bra^MwYgi^R"<80>kb^[^J
