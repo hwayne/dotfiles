@@ -1,45 +1,56 @@
 " vim:fdm=marker
 
-" vim-session {{{
+" vim-session
 let g:session_autosave = 'no'
-" }}}
+"
 
-" vim-rails {{{
-noremap <leader>r <c-W>v<c-W>l:A<cr>
+" vim-rails
+noremap <leader>r :AV<cr>
 noremap <leader>? :Gblame<cr>
-" }}}
+noremap <leader>gb :.Gbr!<cr>
+"
 
-" NERDTree {{{
+" NERDTree
 
+let NERDTreeMinimalUI=1
+let NERDTreeShowBookmarks=1
+let NERDTreeShowLineNumbers=1
 let NERDTreeIgnore = ['\~$', '\.pyc']
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
 
-" }}}
-" Ctrl-P {{{
+" Neoterm
+
+set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
+set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
+set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
+nnoremap <silent> <leader>ta :call neoterm#test#run('all')<cr>
+nnoremap <silent> <leader>tf :call neoterm#test#run('file')<cr>
+nnoremap <silent> <leader>te :call neoterm#test#run('current')<cr>
+nnoremap <silent> <leader>tr :call neoterm#test#rerun()<cr>
+
+
+"
+" Ctrl-P
 
 let g:ctrlp_working_path_mode = 'r'
-nnoremap <leader><c-p> :CtrlPBuffer<CR>
+nnoremap <leader><c-p> :CtrlPQuickfix<CR>
 
-" }}}
-" UltiSnips {{{
+" Switch
 
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+noremap - :Switch<CR>
+let g:switch_custom_definitions = [["create", "build" ], ["allow", "expect"], ["to", "not_to"]]
 
-" }}}
-" misc {{{
+"
+" misc
 
 nmap <leader>S :Scratch<CR>
 nmap <leader>u :UndotreeToggle<CR>
-noremap - :Switch<CR>
-let g:switch_custom_definitions = [["create", "build" ]]
 nmap <F8> :TagbarToggle<CR>
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
 
 let g:pymode_lint_on_write = 0
 
-
-" }}}
+let g:neoterm_position = 'vertical'
+"

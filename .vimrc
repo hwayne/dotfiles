@@ -7,14 +7,6 @@
         endif
     " }
 
-    " Windows Compatible {
-        " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-        " across (heterogeneous) systems easier.
-        if has('win32') || has('win64')
-          set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-        endif
-    " }
-
     " Setup Bundle Support {
         " The next three lines ensure that the ~/.vim/bundle/ system works
         filetype on
@@ -26,18 +18,6 @@
 " }
 
 " Bundles {
-
-    " Use local bundles if available {
-        if filereadable(expand("~/.vimrc.bundles.local"))
-            source ~/.vimrc.bundles.local
-        endif
-    " }
-
-    " Use fork bundles if available {
-        if filereadable(expand("~/.vimrc.bundles.fork"))
-            source ~/.vimrc.bundles.fork
-        endif
-    " }
 
     " Use bundles config {
         if filereadable(expand("~/.vimrc.bundles"))
@@ -59,20 +39,17 @@ endif
 " General {
 
     set background=dark         " Assume a dark background
+    set termguicolors
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
     if !has('gui')
         "set term=$TERM          " Make arrow and other keys work
     endif
     filetype plugin indent on   " Automatically detect file types.
     syntax on                   " Syntax highlighting
-    set mouse=a                 " Automatically enable mouse usage
-    set mousehide               " Hide the mouse cursor while typing
     scriptencoding utf-8
+    let g:neoterm_shell = "bash"
+    Bundle 'morhetz/gruvbox'
 
-    if has ('x') && has ('gui') " On Linux use + register for copy-paste
-        set clipboard=unnamedplus
-    elseif has ('gui')          " On mac and Windows, use * register for copy-paste
-        set clipboard=unnamed
-    endif
 
     " Most prefer to automatically switch to the current file directory when
     " a new buffer is opened; to prevent this behavior, add the following to
@@ -83,17 +60,13 @@ endif
         " Always switch to the current file directory
     endif
 
-    "set autowrite                       " Automatically write a file when leaving a modified buffer
-    "set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
     set viewoptions=folds,options,unix,slash " Better Unix / Windows compatibility
     set virtualedit=onemore             " Allow for cursor beyond last character
     set history=1000                    " Store a ton of history (default is 20)
-""    set spell                           " Spell checking on
     set hidden                          " Allow buffer switching without saving
 
     " Instead of reverting the cursor to the last position in the buffer, we
     " set it to the first line when editing a git commit message
-    "au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
     " Setting up the directories {
         if has('persistent_undo')
@@ -116,13 +89,6 @@ endif
 
 " Vim UI {
 
-    if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-        let g:solarized_termcolors=256
-        let g:solarized_termtrans=1
-        let g:solarized_contrast="high"
-        let g:solarized_visibility="high"
-        color solarized                 " Load a colorscheme
-    endif
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
 
@@ -136,13 +102,12 @@ endif
                                     " Things like vim-gitgutter will match LineNr highlight
     "highlight clear CursorLineNr   " Remove highlight color from current line number
 
-    if has('cmdline_info')
-        set ruler                   " Show the ruler
-        set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
-        set showcmd                 " Show partial commands in status line and
+    set ruler                   " Show the ruler
+    set rulerformat=%30(%=\:b%n%y%m%r%w\ %L,%c%V\ %P%) " A ruler on steroids
+    set showcmd                 " Show partial commands in status line and
                                     " Selected characters/lines in visual mode
-        Bundle 'bling/vim-airline'
-    endif
+
+    set statusline=%f%m%r%w%y%=[%L:%p%%][%c%V]
 
     set backspace=indent,eol,start  " Backspace for dummies
     set linespace=0                 " No extra spaces between rows
@@ -163,10 +128,10 @@ endif
     set softtabstop=2               " Let backspace delete indent
 
 "Autoload rainbow parenthesis
-au VimEnter * RainbowParenthesesToggle
-au Syntax   * RainbowParenthesesLoadRound
-au Syntax   * RainbowParenthesesLoadSquare
-au Syntax   * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax   * RainbowParenthesesLoadRound
+"au Syntax   * RainbowParenthesesLoadSquare
+"au Syntax   * RainbowParenthesesLoadBraces
 
 "Leader
 let mapleader="\<Space>"
@@ -180,6 +145,8 @@ set lazyredraw
 set wildmenu
 set splitbelow
 set splitright
+set noswapfile
+set clipboard=unnamedplus
 
 " Use plugin configs {
 if filereadable(expand("~/.vimrc.bundles.options"))
@@ -191,4 +158,3 @@ if filereadable(expand("~/.vimrc.mappings"))
   source ~/.vimrc.mappings
 endif
 " }
-

@@ -10,7 +10,11 @@
 
 " save file path for c/p
 noremap \l :let @+ = expand('%')<cr>
-nnoremap <leader>/ :!git grep <c-r>=expand('<cword>')<CR><CR>
+nnoremap <leader>/ :Ggrep! <c-r>=expand('<cword>')<CR>
+
+" easy adding of spec files
+
+noremap <leader>pe "=v:errmsg<cr>p
 
 noremap \\ :wa<return>
 noremap ZA :wa<cr>:qa<cr>
@@ -20,7 +24,7 @@ noremap ZC :qa!<cr>
 " navigation {{{
 
 "make k act like inverse j
-nnoremap K i<cr><esc>
+nnoremap <leader>k i<cr><esc>
 
 "make capital h/l like super h/l
 noremap ^ H
@@ -34,6 +38,13 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+"easier navigation of terminal
+tnoremap <c-j> <c-\><c-n><c-w>j
+tnoremap <c-k> <c-\><c-n><c-w>k
+tnoremap <c-h> <c-\><c-n><c-w>h
+tnoremap <c-l> <c-\><c-n><c-w>l
+
+
 "train to use hjkl less
 "noremap jj <nop>
 "noremap kk <nop>
@@ -43,10 +54,6 @@ nnoremap <c-l> <c-w>l
 " }}}
 " line manipulation {{{
 
-"free line adding
-
-noremap go o<esc>
-noremap gO O<esc>
 
 "remote move/copy line
 
@@ -64,13 +71,6 @@ noremap Q @@
 "highlight words without moving cursor
 noremap <leader><leader>h *#
 "noremap <leader><leader>s ^yyp^cwexpectf,c3l.f'xa.tohavebeencalled()
-
-" }}}
-" safe deletion {{{
-
-noremap s "_d
-noremap S "_D
-noremap ss "_dd
 
 " }}}
 " misc {{{

@@ -5,4 +5,3 @@ function! AddCircleCIText()
 endfunction
 
 com! AddCircle cal AddCircleCIText()
-" ihttps://circleci.com/gh/eSpark/core.<80>kb/tree/^[/bra^MwYgi^R"<80>kb^[^J

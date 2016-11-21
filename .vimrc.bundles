@@ -71,22 +71,10 @@
              let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
          endif
  
-     " Use local bundles if available {
-         if filereadable(expand("~/.vimrc.bundles.local"))
-             source ~/.vimrc.bundles.local
-         endif
-     " }
- 
-     " Use fork bundles if available {
-         if filereadable(expand("~/.vimrc.bundles.fork"))
-             source ~/.vimrc.bundles.fork
-         endif
-     " }
- 
      " In your .vimrc.bundles.local file
      " list only the plugin groups you will use
      if !exists('g:spf13_bundle_groups')
-         let g:spf13_bundle_groups=['added', 'general', 'neocomplete', 'programming', 'php', 'ruby', 'python', 'go', 'twig', 'javascript', 'fs', 'html', 'misc', 'scala']
+         let g:spf13_bundle_groups=['added', 'neovim', 'general', 'programming', 'ruby', 'python', 'javascript', 'html']
      endif
  
      " To override all the included bundles, put
@@ -95,51 +83,49 @@
      if !exists("g:override_spf13_bundles")
  
          if count(g:spf13_bundle_groups, 'added')
+
+             Bundle 'tla.vim', {'pinned': 1}
+             Bundle 'ervandew/supertab'
+             Bundle 'godlygeek/tabular'
              Bundle 'tpope/vim-repeat' 
+             Bundle 'tpope/vim-unimpaired' 
              Bundle 'hwayne/vim-pivot'
-"             Bundle 'vim-scripts/argtextobj.vim'
+             Bundle 'justinmk/vim-sneak'
              Bundle 'AndrewRadev/switch.vim'
              Bundle 'kshenoy/vim-signature'
-             Bundle 'chrisbra/csv.vim'
              Bundle 'wesQ3/vim-windowswap'
-             Bundle 'chrisbra/unicode.vim'
              Bundle 'mtth/scratch.vim'
              Bundle 'Peeja/vim-cdo'
+             Bundle 'michaeljsmith/vim-indent-object'
          endif
+
+         if count(g:spf13_bundle_groups, 'neovim')
+             Bundle 'kassio/neoterm'
+         endif
+
      " General
          if count(g:spf13_bundle_groups, 'general')
              Bundle 'Xuyuanp/nerdtree'
              Bundle 'kana/vim-textobj-user'
-             Bundle 'altercation/vim-colors-solarized'
              Bundle 'spf13/vim-colors'
              Bundle 'tpope/vim-surround'
              Bundle 'ctrlpvim/ctrlp.vim'
-"             " Bundle 'terryma/vim-multiple-cursors'
              Bundle 'xolox/vim-misc'
              Bundle 'xolox/vim-session'
              Bundle 'matchit.zip'
-             Bundle 'kien/rainbow_parentheses.vim'
+             "Bundle 'kien/rainbow_parentheses.vim'
 
-"             Bundle 'Lokaltog/vim-easymotion'
-"             Bundle 'godlygeek/csapprox'
-"             Bundle 'jistr/vim-nerdtree-tabs'
              Bundle 'flazz/vim-colorschemes'
              Bundle 'mbbill/undotree'
              Bundle 'myusuf3/numbers.vim'
              Bundle 'nathanaelkane/vim-indent-guides'
-"             if !exists('g:spf13_no_views')
-"                 Bundle 'vim-scripts/restore_view.vim'
-"             endif
-"             Bundle 'tpope/vim-abolish.git'
+             Bundle 'tpope/vim-abolish.git'
 
          endif
 
 "     " General Programming
          if count(g:spf13_bundle_groups, 'programming')
-"             " Pick one of the checksyntax, jslint, or syntastic
              Bundle 'mattn/webapi-vim'
-"             Bundle 'mattn/gist-vim'
-"             Bundle 'godlygeek/tabular'
              Bundle 'airblade/vim-gitgutter'
              Bundle 'scrooloose/syntastic'
              Bundle 'tpope/vim-fugitive'
@@ -152,38 +138,12 @@
              endif
          endif
 
-     " Snippets & AutoComplete
-"         if count(g:spf13_bundle_groups, 'snipmate')
-"              Bundle 'SirVer/ultisnips'
-"              Bundle 'honza/vim-snippets'
-"             " Source support_function.vim to support vim-snippets.
-"             if filereadable(expand("~/.vim/bundle/vim-snippets/snippets/support_functions.vim"))
-"                 source ~/.vim/bundle/vim-snippets/snippets/support_functions.vim
-"             endif
-"         elseif count(g:spf13_bundle_groups, 'neocomplcache')
-"               Bundle 'SirVer/ultisnips'
-"             " Bundle 'Shougo/neocomplcache'
-"             " Bundle 'Shougo/neosnippet'
-"             " Bundle 'honza/vim-snippets'
-"         elseif count(g:spf13_bundle_groups, 'neocomplete')
-"              Bundle 'SirVer/ultisnips'
-"              Bundle 'Shougo/neocomplete.vim.git'
-"              Bundle 'Shougo/neosnippet'
-"              Bundle 'honza/vim-snippets'
-"              "Bundle 'Valloric/YouCompleteMe'
-"         endif
-
-"     " PHP
-"         if count(g:spf13_bundle_groups, 'php')
-"         endif
-
      " Python
          if count(g:spf13_bundle_groups, 'pythons')
 "             " Pick either python-mode or pyflakes & pydoc
               " Bundle 'klen/python-mode'
               Bundle 'python.vim'
               Bundle 'python_match.vim'
-              Bundle 'ameade/qtpy-vim'
 "             " Bundle 'pythoncomplete'
          endif
 
@@ -196,12 +156,8 @@
              Bundle 'pangloss/vim-javascript'
 "             Bundle 'briancollins/vim-jst'
              Bundle 'kchmck/vim-coffee-script'
-             Bundle 'lukaszkorecki/CoffeeTags'
+             "Bundle 'lukaszkorecki/CoffeeTags'
          endif
-
-"     " Java
-"         if count(g:spf13_bundle_groups, 'scala')
-"         endif
 
      " F#
          if count(g:spf13_bundle_groups, 'fs')
@@ -217,35 +173,13 @@
 
 "     " Ruby
          if count(g:spf13_bundle_groups, 'ruby')
-             Bundle 'thoughtbot/vim-rspec'
              Bundle 'tpope/vim-rails'
              Bundle 'nono/vim-handlebars'
              Bundle 'nelstrom/vim-textobj-rubyblock'
-"             Bundle 'juvenn/mustache.vim'
              let g:rubycomplete_buffer_loading = 1
              let g:rubycomplete_classes_in_global = 1
              let g:rubycomplete_rails = 1
          endif
-
-"     " Go Lang
-         if count(g:spf13_bundle_groups, 'go')
-             Bundle 'jnwhiteh/vim-golang'
-             Bundle 'spf13/vim-gocode'
-         endif
-
-"     " Misc
-"         if count(g:spf13_bundle_groups, 'misc')
-"         endif
-
-"     " Twig
-"         if count(g:spf13_bundle_groups, 'twig')
-"         endif
      endif
 
 " " }
-
- " General {
-     " set autowrite                  " automatically write a file when leaving a modified buffer
-     set shortmess+=filmnrxoOtT      " Abbrev. of messages (avoids 'hit enter')
- " }
- 
