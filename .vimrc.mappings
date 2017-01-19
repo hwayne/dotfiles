@@ -3,29 +3,34 @@
 " exiting insert mode {{{
 
 :inoremap jk <esc>
-:inoremap jk <esc>
+:inoremap JK <esc>
 
 " }}}
 " filesystems {{{
 
 " save file path for c/p
 noremap \l :let @+ = expand('%')<cr>
+nnoremap <leader>/ :Ggrep! <c-r>=expand('<cword>')<CR>
+
+" easy adding of spec files
+
+noremap <leader>pe "=v:errmsg<cr>p
 
 noremap \\ :wa<return>
-noremap za :wa<cr>:qa<cr>
-noremap zc :qa!<cr>
+noremap ZA :wa<cr>:qa<cr>
+noremap ZC :qa!<cr>
 
 " }}}
 " navigation {{{
 
 "make k act like inverse j
-nnoremap k i<cr><esc>
+nnoremap <leader>k i<cr><esc>
 
 "make capital h/l like super h/l
-noremap ^ h
-noremap $ l
-noremap h ^
-noremap l $
+noremap ^ H
+noremap $ L
+noremap H ^
+noremap L $
 
 "easier navigation of windows
 nnoremap <c-j> <c-w>j
@@ -33,19 +38,22 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+"easier navigation of terminal
+tnoremap <c-j> <c-\><c-n><c-w>j
+tnoremap <c-k> <c-\><c-n><c-w>k
+tnoremap <c-h> <c-\><c-n><c-w>h
+tnoremap <c-l> <c-\><c-n><c-w>l
+
+
 "train to use hjkl less
-noremap jj <nop>
-noremap kk <nop>
-noremap hh <nop>
-noremap ll <nop>
+"noremap jj <nop>
+"noremap kk <nop>
+"noremap hh <nop>
+"noremap ll <nop>
 
 " }}}
 " line manipulation {{{
 
-"free line adding
-
-noremap go o<esc>
-noremap gO O<esc>
 
 "remote move/copy line
 
@@ -58,7 +66,7 @@ noremap <leader>j :<C-U>execute "normal! ".v:count."jyy".v:count."kp"<CR>
 " macro trix {{{
 
 "easier macro repeating and avoid ex mode
-noremap q @@
+noremap Q @@
 
 "highlight words without moving cursor
 noremap <leader><leader>h *#
@@ -68,7 +76,8 @@ noremap <leader><leader>h *#
 " misc {{{
 
 noremap <leader>ds :%s/\s*$//<cr>:noh<cr>
-
+"search and replace word under cursor
+nnoremap <Leader>sr :%s/\<<C-r><C-w>\>/
 noremap Y y$
 
 " }}}

@@ -1,0 +1,12 @@
+function! AddCircleCIText()
+  normal! ihttps://circleci.com/gh/eSpark/core/tree/
+  execute "normal! /branch\<cr>"
+  normal! Wyt:``$p
+endfunction
+
+function! GetSynStack()
+  echo map(synstack(line("."), col(".")), 'synIDattr(v:val, "name")')
+endfunction
+
+com! AddCircle cal AddCircleCIText()
+com! GetSyn cal GetSynStack()
