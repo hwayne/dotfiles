@@ -155,6 +155,7 @@ if filereadable(expand("~/.vimrc.bundles.options"))
 endif
 " }
 " Use all of my crazy mappings {
+
 if filereadable(expand("~/.vimrc.mappings"))
   source ~/.vimrc.mappings
 endif

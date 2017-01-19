@@ -95,7 +95,6 @@
              Bundle 'kshenoy/vim-signature'
              Bundle 'wesQ3/vim-windowswap'
              Bundle 'michaeljsmith/vim-indent-object'
-
              Bundle 'SirVer/ultisnips'
              Bundle 'honza/vim-snippets'
          endif

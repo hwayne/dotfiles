@@ -2,7 +2,6 @@ export EDITOR=nvim
 alias vim="nvim"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
-
 export CLASSPATH=$CLASSPATH:~/specs/tla2tools.jar
 eval "$(hub alias -s)"
 source ~/warp/warp

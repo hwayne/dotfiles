@@ -30,10 +30,6 @@ nnoremap <silent> <leader>te :call neoterm#test#run('current')<cr>
 nnoremap <silent> <leader>tr :call neoterm#test#rerun()<cr>
 
 
-" Deoplete
-
-"let g:deoplete#enable_at_startup = 1
-
 " Ctrl-P
 
 let g:ctrlp_working_path_mode = 'r'
